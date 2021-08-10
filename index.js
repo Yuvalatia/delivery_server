@@ -45,6 +45,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: false
   })
   .then(() =>
     app.listen(port, () => console.log(`Server Port: ${port} - DB connected`))

@@ -5,6 +5,11 @@ module.exports = {
         INTERNAL_SERVER_ERROR: "Internal error has made, please try again later.",
         INTERNAL_USER_ERROR: "Error made.", 
         USER_ALREADY_EXSITS_ERROR: "user already exsits.",
-        LOGIN_FAILED_ERROR: "Email or password are wrong, please try again."
+        LOGIN_FAILED_ERROR: "Email or password are wrong, please try again.",
+        FOBIDDEN_ACCESS_ERROR: "Access denied."
+    },
+    userRoles: {
+        USER: 0,
+        ADMIN: 1
     }
 }
