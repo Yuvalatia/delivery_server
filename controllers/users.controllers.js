@@ -88,7 +88,24 @@ const loginUser = async (req, res, next) => {
     res.json({token});
 }
 
+const getUserDetails = async (req, res, next) => {
+    let user;
+    try{
+        user = await User.findById(req.authData.id);
+    }catch(err){
+        return next(new HttpError(errorMessages.LOGIN_FAILED_ERROR, 404));
+    }
+
+    if(!user){
+        return next(new HttpError(errorMessages.LOGIN_FAILED_ERROR, 404));
+    }
+    const {full_name, email, role} = user;
+    
+    res.json({full_name, email, role});
+}
+
 module.exports = {
     registerNewUser,
-    loginUser
+    loginUser,
+    getUserDetails
 }
